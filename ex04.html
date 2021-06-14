@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+</head>
+<body>
+    
+    <div>
+        <span id="aaa">가나다라</span>
+        <span id="bbb">마바사아</span>
+    </div>
+   
+
+   <script>
+
+    var a = document.getElementById("aaa").innerText;
+    alert('span 태그의 첫번째 값은: ' + a);
+
+    var b = document.querySelector("#bbb").innerText;
+    alert('span 태그의 두번째 값은: ' + b);
+
+    document.getElementById("aaa").innerText = '변경하기';
+    </script>
+</body>
+</html>
