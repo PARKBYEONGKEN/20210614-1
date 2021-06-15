@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/table1.css" rel="stylesheet"> 
+</head>
+<style>
+    .ck-editor__editable_inline{
+        min-height:400px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>글쓰기</h2>
+        <hr>
+        <table>
+            <tr>
+                <th>제목</th>
+                <td><input type="text" id="title"></td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td><textarea rows="6" id="content">내용이 표시됨</textarea></td>
+            </tr>
+            <tr>
+                <th>작성장</th>
+                <td><input type="text" value="가나다" id="writer"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                <input type="submit" value="글쓰기" id="btn" />
+                <a href="table1.html">목록으로 이동</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+   
+   <script src="js/table2.js"></script>
+   <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
+   <script>
+       var cont = document.getElementById("content");
+       ClassicEditor.create(cont);
+   </script>
+    
+</body>
+</html>

@@ -9,27 +9,29 @@
 <body>
     <fieldset style="width:500px; padding:30px;">
         <legend>회원가입</legend>
-        <div>
-            <label style="display:inline-block; width:100px;">
-            아이디
-             </label>
-             <input type="text" id="userid">
-        </div>
-        <div >
-            <label style="display:inline-block; width:100px;">
-                암호
-            </label>
-            <input type="password" id="userpw">
-        </div>
-        <div>
-            <label style="display: inline-block; width:100px;">
-             암호확인
-            </label>
-            <input type="password" id="userpw2">
-        </div>
-        <div>
-            <input type="button" value="회원가입" id="btn">
-        </div>
+        <form action="menu1.html">
+                <div>
+                    <label style="display:inline-block; width:100px;" for="userid">
+                    아이디
+                    </label>
+                    <input type="text" id="userid">
+                </div>
+                <div >
+                    <label style="display:inline-block; width:100px;" for="userpw">
+                        암호
+                    </label>
+                    <input type="password" id="userpw">
+                </div>
+                <div>
+                    <label style="display: inline-block; width:100px;" for="userpw2">
+                    암호확인
+                    </label>
+                    <input type="password" id="userpw2">
+                </div>
+                <div>
+                    <input type="submit" value="회원가입" id="btn">
+                </div>
+            </form>
     </fieldset>
     <script>
         var btn = document.getElementById("btn");
