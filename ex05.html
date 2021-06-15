@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        }
+        
+    .container{
+        width:100%;
+    }
+    header{
+        background-color: #666;
+        text-align: center;
+        color:#fff;
+        padding:20px;
+    }
+    nav{
+        float:left;
+        width:20%;
+        height: 400px;
+        background-color: #ccc;
+        padding:20px;
+       
+    }
+    content{
+        float:left;
+        width:60%;
+        height: 400px;
+        background-color: #882424;
+        padding:20px;
+       
+    }
+    bside{
+        float:left;
+        width:20%;
+        height: 400px;
+        background-color: chartreuse;
+        padding:20px;
+    }
+    footer{
+        background-color: cadetblue;
+        padding:20px;
+        text-align: center;
+        color:white;
+    }
+    section::after{
+        content: "";
+        clear:both;
+        display:block;
+    }
+    nav > ul{
+        list-style-type: none;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h3>header</h3>
+        </header>
+        <section>
+            <nav>
+                <p>메뉴</p>
+                <ul>
+                    <li><a href="meun1.html">메뉴1</a></li>
+                    <li><a href="meun2.html">메뉴2</a></li>
+                    <li><a href="meun3.html">메뉴3</a></li>
+                </ul>            
+            </nav>
+            <content>
+                <p>내용</p>
+            </content>
+            <bside>
+                <p>우측배너</p>
+            </bside>
+        </section>
+        <footer>
+            <h4>footer</h4>
+        </footer>
+    </div>
+</body>
+</html>
