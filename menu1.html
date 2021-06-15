@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu1</title>
+</head>
+<style>
+
+</style>
+<body>
+    <div class="container">
+
+        <h3>block</h3>
+        <div style="display:block; width:200px; border:1px solid #ccc;">
+            11111
+        </div>
+        <div style="display:block; width:200px; border:1px solid #ccc;">
+            111111
+        </div>
+        <div style="display:block; width:200px; border:1px solid #ccc;">
+            111111
+        </div>
+
+
+        <h3>inline</h3>
+        <div style="display:inline; width:200px; border:1px solid #ccc;">
+            11111
+        </div>
+        <div style="display:inline; width:200px; border:1px solid #ccc;">
+            111111
+        </div>
+        <div style="display:inline; width:200px; border:1px solid #ccc;">
+            111111
+        </div>
+        
+
+        <h3>inline-block</h3>
+        <div style="display:inline-block; width:200px; border:1px solid #ccc;">
+            11111
+        </div>
+        <div style="display:inline-block; width:200px; border:1px solid #ccc;">
+            111111
+        </div>
+        <div style="display:inline-block; width:200px; border:1px solid #ccc;">
+            111111
+        </div>
+    </div>
+    <hr>
+    <fieldset style="width:400px; padding:20px;">
+        <legend>로그인</legend>
+        <form action="login_get.html">
+            <div style="display:block;"> 
+                <label style="width:120px; display:inline-block;" for="userid">아이디</label>
+                <input type="text" id="userid" />
+            </div>
+            <div style="display:block;"> 
+                <label style="width:120px; display:inline-block;" for="userpw">암호</label>
+                <input type="password" id="userpw"/>
+            </div>
+            <div> 
+                <input type="submit" value="로그인" id="btn"/>
+            </div>
+        </form>
+    </fieldset>
+
+
+    <script>
+        var btn = document.getElementById("btn");
+        var btn1 = document.querySelector('#btn');
+
+        // btn.addEventListener('click',function(){ 소스코드 });
+        // btn.onclick = function(){ 소스코드 };
+        btn.onclick = function(){
+            var userid = document.getElementById("userid");
+            var userpw = document.getElementById("userpw");
+            
+
+            if (userid.value ==""){
+                alert('아이디를 입력하세요');
+                userid.focus();
+                return false;
+            }
+            if (userpw.value ==""){
+                alert('암호를 입력하세요');
+                userpw.focus();
+                return false;
+            }
+        };
+    </script>
+</body>
+</html>

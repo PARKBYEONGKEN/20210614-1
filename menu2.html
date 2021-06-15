@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴2</title>
+</head>
+<body>
+    <input type="text" id="aaa" value="A" />
+
+    <input type="text" class="bbb" value="B"/>
+    <input type="text" class="bbb" value="C"/>
+    
+    <input type="button" value="버튼" id="btn">
+    
+    <script>
+        // 1.변수
+        var btn = document.getElementById("btn");
+        btn.addEventListener('click',function(){
+            //이부분은 버튼을 클릭시 활성화됨
+           console.log(btn);
+           var a = document.getElementById("aaa");
+        console.log(a.value); //A
+        var b = document.getElementsByClassName("bbb");
+        console.log(b[0].value); //B
+        console.log(b[1].value); //C
+        })
+      
+      
+        
+        
+
+        
+    </script>
+</body>
+</html>
