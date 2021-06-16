@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax 예제</title>
+</head>
+<body>
+    <div class="container">
+        <table id="table" border="1">
+            <tr>
+                <th>sepailength</th>
+                <th>sepalwidth</th>
+                <th>patallength</th>
+                <th>petalwidth</th>
+                <th>species</th>
+                
+            </tr>
+        
+        </table>
+    
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://raw.githubusercontent.com/domoritz/maps/master/data/iris.json');
+        xhr.send();
+        xhr.addEventListener('load',function(){
+            var result = JSON.parse(xhr.response);
+            console.log(xhr.response);
+            console.log(typeof(result));
+            
+            var t1 = document.getElementById('table');
+            for(var i=0; i<result.length; i++ ){
+                if (result[i].species =='setosa'){
+                t1.innerHTML +=`<tr><td>${result[i].sepalLength}</td><td>${result[i].sepalWidth}</td><td>${result[i].petalLength}</td><td>${result[i].petalWidth}</td><td>${result[i].species}</td></tr>`;
+             }
+            } 
+        });
+    </script>
+</body>
+</html>

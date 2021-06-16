@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+<body>
+    <div class="container">
+        <table id="table" border="1">
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+                <th>연락처</th>
+                <th>이메일</th>
+                <th>가입일자</th>
+            </tr>
+        
+        </table>
+    </div>
+
+    <script>
+        // var aa = ['가2e434', 2, '010-0000-0000'];
+    //     var a1 =[
+    //         {name: '가2e434', age:2 , tel:'010-0000-3000'},
+    //         {name: '나2e434', age:4 , tel:'010-0000-4000'},
+    //         {name: '다2e434', age:5 , tel:'010-0000-5000'},
+    //         {name: '라2e434', age:6 , tel:'010-0000-6000'},
+    // ]; // JSON 
+        var b1 =[
+            {name: '가2e434', age:2 , tel:'010-0000-3000'},// JSON
+            {name: '나2e434', age:4 , tel:'010-0000-4000'},// JSON
+            {name: '다2e434', age:5 , tel:'010-0000-5000'},// JSON
+    ];  
+        // <name>가2e434</name>// XML
+        // console.log(b1[2].name);
+        // <age>2</age>  XML
+        // <tel>010-0000-0000</tel>  XML
+        //console.log(b1.name); => 가 2e434   XML 출력법
+        // console.log(b1.age); => 2   XML 출력법
+        
+        var a1 = [
+        ['가2e434',2,'010-0000-0000'],
+        ['나',2,'010-0000-0000'],
+        ['가2e434',2,'010-0000-0000'],
+        ['가2e434',2,'010-0000-0000'],
+        ];
+        var t1 = document.getElementById('table');
+        for(var i=0; i<a1.length; i++) {
+            t1.innerHTML += `<tr><td>${a1[i][0]}</td><td>${a1[i][1]}</td><td>${a1[i][2]}</td></tr>`;
+        }
+        // console.log(typeof(a1),a1[0],a1[2]);
+        // console.log(a1[0][0]);
+        var t1 = document.getElementById('table');
+        // var name = '가'; // 백엔드에서 받은 값
+        // var age = '2';  // 백엔드에서 받은 값
+        // var tel = '010-0000-0000';  // 백엔드에서 받은 값
+        // var mail = 'qwe123@naver.com';
+        // var date = '2021.06.16'
+        for(var i=0; i<b1.length; i++){
+            // t1.innerHTML += `<tr><td>${name}</td><td>${age}</td><td>${tel}</td><td>${mail}</td><td>${date}</td></tr>`
+            
+                t1.innerHTML += `<tr><td>${b1[i].name}</td><td>${b1[i].age}</td><td>${b1[i].tel}</td></tr>`;
+
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET','http://ihongss.com/json/exam12.json');
+        xhr.send();
+        //데이터가 왔을때 호출함
+        xhr.addEventListener('load',function(){
+            var result = JSON.parse(xhr.response); // object 값으로 변경 
+
+            console.log(typeof(result));
+            console.log(xhr.response);
+            console.log(result);
+            // b1과 같은구족 result = [{},{}.{}.{}.{}]
+            var t1 = document.getElementById('table');
+            for(var i=0; i<result.length; i++){
+            t1.innerHTML += `<tr><td>${result[i].name}</td><td>${result[i].age}</td><td>${result[i].id}</td></tr>`;
+        };
+        });
+
+        var xhr1 = new XMLHttpRequest();
+        xhr1.open('GET','http://ihongss.com/json/exam9.json');
+        xhr1.send();
+        xhr1.addEventListener('load',function(){
+            var result2 = JSON.parse(xhr1.response);
+           
+            console.log(result2);
+            console.log(xhr1.response);
+            console.log(typeof(result2));
+            
+
+            var result3 = result2.data;
+
+            var t1 = document.getElementById('table');
+            for(var i=0; i<result3.length; i++){
+                t1.innerHTML += `<tr><td>${result2.data[i].name}</td><td>${result3[i].age}</td><td>${result3[i].id}</td></tr>`;
+        
+
+            };
+        });
+     
+    </script>
+</body>
+</html>

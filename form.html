@@ -39,7 +39,23 @@
         </select>
         <input type="button" id="btn4" value="check ">
         <div id="out4">select 선택값</div>
+        <hr>
+        
+        <input type="radio" name="rad" value='A'> A
+        <input type="radio" name="rad" value='B'> B
+        <input type="radio" name="rad" value='C'> C
+        <input type="button" id="btn5" value="radio버튼 ">
+        <div id="out5">radio 선택값</div>
 
+
+        <hr>
+
+        <input type="checkbox" class="txt6" value='a' / >A
+        <input type="checkbox" class="txt6" / >B
+        <input type="checkbox" class="txt6" / >C
+        <input type="button" id="btn6" value="check ">
+        <div id="out6">체크박스 체크유무</div>
+        <hr />
     </div>
     <script>
         var btn1 = document.querySelector('#btn1');
@@ -57,6 +73,7 @@
                 out2.innerText = area.value;                
             };
         var btn3 = document.querySelector('#btn3');
+           
             btn3.onclick = function(){
                 var txt3 = document.querySelector('#txt3');
                 var out3 = document.querySelector('#out3');
@@ -68,6 +85,7 @@
                 }
             };
         var btn4 = document.querySelector('#btn4');
+            // btn4.addEventListener('click', function(){};
             btn4.onclick =function(){
                 var txt4 =  document.querySelector('#txt4');
                 var out4 =  document.querySelector('#out4');
@@ -75,6 +93,31 @@
                 out4.innerText = txt4.value;
             };
 
+        var btn5 = document.querySelector('#btn5');
+            btn5.addEventListener('click',() => {
+                // txt5[0], txt5[1], txt5[2]
+                var txt5 = document.getElementsByName('rad');
+                var out5 =  document.querySelector('#out5');
+                // for(초기값; 조건; 증가값){}
+                for(var i=0; i<txt5.length; i++){
+                    if( txt5[i].checked == true){
+                        out5.innerText = txt5[i].value;
+                    }  
+                 }
+            });
+
+            var btn6 = document.querySelector('#btn6');
+                btn6.addEventListener('click',() =>{
+                    var out6 = document.querySelector('#out6');
+                    var txt6 = document.getElementsByClassName('txt6');
+                    out6.innerText = '';
+                for(var i=0; i< txt6.length; i++){
+                    console.log(txt6.length);
+                    if(txt6[i].checked == true) {
+                        out6.innerText += (i + ", ");
+                    }
+                }
+            });
     </script>
 </body>
 </html>
