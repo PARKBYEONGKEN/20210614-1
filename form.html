@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        .container{
+            width:800px;
+            border:1px solid #ccc;
+            margin: 0 auto;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Form 예제</h3>
+        <hr>
+        <input type="text" id="txt1" >
+        <input type="button" value="text 값가져오기" id="btn1">
+        <div id="out1">text값 표시하기</div>
+        <hr>
+        <textarea rows="6" placeholder=" 내용입력" id="area"></textarea>
+        <input type="button" value="textarea 값가져오기" id="btn2">
+        <div id="out2">표시</div>
+        <hr>
+
+        <input type="checkbox" id="txt3" / >
+        <input type="button" id="btn3" value="check ">
+        <div id="out3">체크박스 체크유무</div>
+        <hr>
+
+        <select id="txt4">
+            <option>html</option>
+            <option>css</option>
+            <option>js</option>
+        </select>
+        <input type="button" id="btn4" value="check ">
+        <div id="out4">select 선택값</div>
+
+    </div>
+    <script>
+        var btn1 = document.querySelector('#btn1');
+            btn1.onclick = function(){
+                var txt1 = document.querySelector('#txt1');
+                var out1 = document.querySelector('#out1');
+
+                out1.innerText = txt1.value;
+            };
+        var btn2 = document.querySelector('#btn2');
+            btn2.onclick = function(){
+                var area = document.querySelector('#area');
+                var out2 = document.querySelector('#out2');
+                
+                out2.innerText = area.value;                
+            };
+        var btn3 = document.querySelector('#btn3');
+            btn3.onclick = function(){
+                var txt3 = document.querySelector('#txt3');
+                var out3 = document.querySelector('#out3');
+                if (txt3.checked == true){
+                    out3.innerText ='체크되어있음';
+                }
+                else {
+                    out3.innerText = "체크되어있지않음";
+                }
+            };
+        var btn4 = document.querySelector('#btn4');
+            btn4.onclick =function(){
+                var txt4 =  document.querySelector('#txt4');
+                var out4 =  document.querySelector('#out4');
+
+                out4.innerText = txt4.value;
+            };
+
+    </script>
+</body>
+</html>
