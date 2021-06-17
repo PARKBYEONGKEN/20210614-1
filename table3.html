@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/table3.css" rel="stylesheet">
+</head>
+<style>
+    .container{
+        width:1000px;
+        height: 500px;
+        margin:0 auto;
+        border:1px solid #ccc;
+        padding:20px;
+    }
+</style>
+<body>
+    <div class="container">
+        <form>
+        <h3>게시판 글쓰기</h3>
+        <hr>
+        <div>
+            <label class="style">글제목</label>
+            <input type="text" id="title"/>
+        </div>
+        <div>
+            <label class="style">글내용</label>
+            <textarea rows="6" id="content"></textarea>
+        </div>
+        <div>
+            <label class="style">작성자</label>
+            <input type="text" id="writer" />
+        </div>
+        <hr>
+        <div>
+            
+            <input type="submit" value="작성하기" id="btn"/ >
+        </div>
+    </form>
+
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        //$(documnet(){
+        $(document).ready(function(){
+            $('#btn').click(function(){
+                var ti = $('#title').val();
+                var co = $('#content').val();
+                var wr = $('#writer').val();
+                console.log(ti, co, wr);
+                if(ti ==''){
+                    alert('제목을입력하세요');
+                    $('#title').focus();
+                    return false;
+                }
+                
+                
+            });
+        });
+    </script>
+</body>
+</html>

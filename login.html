@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            width:100px;
+            display:inline-block;
+        }
+        fieldset{
+            width:500px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>로그인</legend>
+            <div>
+                <label>아이디</label>
+                <input type="text" id="userid"/>
+            </div>
+            <div>
+                <label>암호</label>
+                <input type="password" id="userpw"/>
+            </div>
+            
+            <div>
+                <input type="submit" value="로그인" id="btn" />
+            </div>
+        </fieldset>
+    </form>
+    
+    <script>
+        
+        var btn = document.getElementById("btn");
+        var userid = document.getElementById("userid");
+        var userpw = document.getElementById("userpw");
+       
+
+     
+        btn.onclick = function(){
+        const xhr = new XMLHttpRequest();
+        const url = "http://ihongss.com/json/login.json?userid=" + userid.value +"&userpw="+userpw.value
+        xhr.open('GET',url);
+        xhr.send(); // 백엔드로 데이터 전송 (id = aaa, pw = bbb) 
+            
+        xhr.addEventListener('load',() =>{
+            //백엔드로 부터 결과가 왔을때
+            const result = JSON.parse(xhr.responseText);
+            console.log(result);
+            
+            if(result.ret == 'y'){
+            alert('로그인 되었습니다');
+            window.location.href="main.html";
+        }
+        else {
+            alert('아이디 또는 암호가 틀립니다.');
+        }
+        });
+        };
+         
+            
+
+           
+    </script>
+</body>
+</html>

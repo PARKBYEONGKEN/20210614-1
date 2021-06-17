@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idcheck</title>
+    <link href="css/idcheck.css" rel="stylesheet">
+   
+</head>
+
+<body>
+    <div class="container">
+    <fieldset style="width:500px; padding:30px;">
+       
+        <legend>회원가입</legend>
+            <form action="#">
+                <label for="userid" class="style1">아이디</label>
+                <input type="text" id="userid">
+            
+            <div id="idcheck"  class="style3">아이디 중복확인</div>
+                <div>
+                <label  for="userpw" class="style1">암호</label>
+                <input type="password" id="userpw">
+            </div>
+            <div>
+                <label for="userpw2" class="style1">암호확인</label>
+                <input type="password" id="userpw2">
+            </div>
+                <label  for="name" class="style1">이름</label>
+                <input type="text" id="name">
+            <div>
+                <label for="age" class="style1">나이</label>
+                <input type="text" id="age">
+            </div>
+                <label for="mail" class="style1">이메일</label>
+                <input type="text" id="mail">
+                <label>@</label>
+                <select>
+                    <option>naver.com</option>
+                    <option>google.com</option>
+                    <option>daum.net</option>
+                </select>
+                
+            <input type="submit" value="회원가입" class="style2" id="btn">
+        <form>
+    </fieldset>
+</div>
+
+<script src="js/abc.js"></script>
+</body>
+</html>

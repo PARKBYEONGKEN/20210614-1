@@ -1,0 +1,30 @@
+
+.container{
+    width:500px;
+    padding:30px;
+    margin:0 auto;
+}
+.style1{
+    width:100px;
+     display:inline-block;
+}
+#btn{
+    display:block;
+    padding:20px 90px;
+    background-color: #eee;
+    border:1px solid #ccc;
+    margin-left: 80px;
+    margin-top:30px;
+}
+.style3{
+    display:inline;
+}
+select{
+    width:120px;
+    
+}
+legend{
+    font-size:20px;
+    font-weight: 800;
+   
+}

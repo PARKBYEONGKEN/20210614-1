@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/table1.css" rel="stylesheet" >
+    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
+    
+
+   
+</head>
+<body>
+    <div class="container">
+        <h1>테이블 실습</h1>
+        <hr>
+    <table id="table" border="1">
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>글제목</th>
+            <th>작성자</th>
+            
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script>
+        var tbody = document.getElementById('tbody');
+        for(var i=1; i<120; i++) {
+            tbody.innerHTML += 
+            `<tr>`+
+            `<td>${i}번호</td>` +
+            `<td>${i}글제목</td>`+
+            `<td>${i}작성자</td>`+
+            `</tr>`;
+        }
+
+        $(document).ready( function () {
+            $('#table').DataTable();
+        } );
+   
+    </script>
+    
+</body>
+</html>

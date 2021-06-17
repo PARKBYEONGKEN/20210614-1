@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fileupload</title>
+</head>
+<body>
+    <div class="container">
+        <form action="upload.html" method="post" enctype="multipart/form-data"> <!--백엔드 전송-->
+        <input type="file" id="file">
+        <img src="images/noimage.jpg" alt="노이미지" width="100px" height="100px" id="img">
+        <input type="submit" value="업로드">
+        </form>
+        <hr>
+        <form action="upload.html" method="post" enctype="multipart/form-data"> <!--백엔드 전송-->
+            <input type="file" id="file2" style="display: none;">
+            <img src="images/noimage.jpg" alt="노이미지" width="100px" height="100px" id="img2" style="cursor:pointer">
+         
+        </form>
+        <hr>
+        
+        <form action="upload.html" method="post" enctype="multipart/form-data"> <!--백엔드 전송-->
+            <input type="file" id="file3" multiple />
+            <div id="img3">여기에 첨부한 모든이미지 표시</div>
+           
+         
+        </form>
+
+    </div>
+   
+   
+   
+   
+   
+   
+   
+   
+   <script>
+       var f3 = document.getElementById('file3');
+        var i3 = document.getElementById('img3');
+    
+        f3.addEventListener('change',(e) =>{
+            var files = e.target.files;
+           i3.querySelectorAll("*").forEach(n=>n.remove()); // 추가 초기화
+            for(var i=0; i<files.length;i++){
+            var reader = new FileReader();
+            reader.readAsDataURL(e.target.files[i]);  // 파일 읽기
+            reader.onload = function(e1){
+                // i3.src = e1.target.result;
+                var imgtag =document.createElement("img");
+                imgtag.setAttribute("src",e1.target.result);
+                imgtag.setAttribute("width","100px");
+                imgtag.setAttribute("height","100px");
+                //<img src="..." width:100px ,height:100px;>
+                i3.appendChild(imgtag);
+                };
+            }
+        });
+
+        //-----------------------------------------------
+        var f2 = document.getElementById('file2');
+        var i2 = document.getElementById('img2');
+
+        i2.addEventListener('click',() =>{
+            f2.click();
+        });
+
+        f2.addEventListener('change',(e) => {
+            
+            // 파일을 읽기 위한 객체 생성 
+            var reader = new FileReader();
+            reader.readAsDataURL(e.target.files[0]);  // 파일 읽기
+            reader.onload = function(e1){
+                //파일을 읽은 종료시점
+                console.log(e1);
+                i2.src = e1.target.result;
+            };
+        });
+       
+        //-------------------------------------------------------------------------
+        var f1 = document.getElementById('file');
+        var i1 = document.getElementById('img');
+
+        f1.onchange = function(e){
+            console.log(e);
+            console.log(typeof(e));
+            console.log(e.target.files[0].name);
+            // 파일을 읽기 위한 객체 생성 
+            var reader = new FileReader();
+            reader.readAsDataURL(e.target.files[0]);  // 파일 읽기
+            reader.onload = function(e1){
+                //파일을 읽은 종료시점
+                console.log(e1);
+                i1.src = e1.target.result;
+            };
+        };
+        // JSON isTrusted: true, type: "change"  ....
+    </script>
+</body>
+</html>
