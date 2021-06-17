@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        .container{
+            width:300px;
+            margin:0 auto;
+            background-color: #eee;
+            border:1px solid black;
+            padding:20px;
+        }
+        label{
+            display:inline-block;
+            width:70px;
+            font-size:13px;
+
+        }
+        #userid{
+            width:110px;
+            height: 25px;
+        }
+        #userid2{
+            height: 30px;
+            background-color: white;
+        }
+        #userpw{
+            width:185px;
+            height: 25px;
+        }
+        #userpw2{
+            width:185px;
+            height: 25px;
+        }
+        #name{
+            width:185px;
+            height:25px;
+        }
+        #g1{
+            width:50px;
+            height: 25px;
+        }
+        #g2{
+            width:50px;
+            height: 25px;
+        }
+        #g3{
+            width:185px;
+            height: 25px;
+        }
+        #g4{
+            width:185px;
+            height: 25px;
+        }
+        #phone{
+            width:48px;
+            height: 30px;
+        }
+        #phone1{
+            width:46px;
+            height: 25px;
+
+        }
+        #phone2{
+            width:46px;
+            height: 25px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label>아이디</label>
+            <input type="text" id="userid"/>
+            <input type="submit" value="중복확인" id="userid2">
+        </div>
+        <div>
+            <label>비밀번호</label>
+            <input type="password" id="userpw" />
+        </div>
+        <div>
+            <label></label>
+            <input type="password" id="userpw2"/>
+        </div>
+        <div>
+            <label>이름</label>
+            <input type="text" id="name" />
+        </div>
+        <div>
+            <label>주소</label>
+            <input type="text" id="g1" />-<input type="text" id="g2"><input type="button" value="우편번호">
+        </div>
+        <div>
+            <label></label>
+            <input type="text" id="g3">
+            
+        </div>
+        <div>
+            <label></label>
+            <input type="text" id="g4">
+            
+        </div>
+        <div>
+            <label>휴대전화</label>
+            <select id="phone">
+                <option>010</option>
+                <option>017</option>
+                <option>000</option>
+                
+            </select> -
+            <input type="text" id="phone1"> - <input type="text" id="phone2">
+        </div>
+        <div>
+            <label>전화번호</label>
+            <select id="tel">
+                <option>010</option>
+                <option>017</option>
+                <option>000</option>
+                
+            </select> -
+            <input type="text" id="tel2"> - <input type="text" id="tel3">
+        </div>
+
+        <div>
+            <label>이메일</label>
+            <input type="text" id="mail">
+            <select id="mail2">
+                <option>naver.com</option>
+                <option>daum.net</option>
+                <option>google.com</option>
+                
+            </select> 
+            <div>
+            <label>생년월일</label>
+            <input type="radio" name="birth" value="양" id="b1">양
+            <input type="radio" name="birth" value="음" id="b2">음
+        </div>
+        <div>
+            <label></label>
+            <select>
+                <option>2000</option>
+                <option>2001</option>
+                <option>2002</option>
+                <option>2003</option>
+                <option>2004</option>
+                
+            </select> 
+            <select>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+                
+            </select> 
+            <select>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                
+            </select> 
+            <hr>
+            <div>
+            <input type="checkbox"> OOO의 이메일을 수신합니다.
+            </div>
+            <div>
+            <input type="checkbox"> OOO의 SMS을 수신합니다.
+            </div>
+            <input type="submit" value="가입취소"><input type="submit" value="회원가입">
+
+
+
+        </div>
+            
+        </div>
+       
+    </div>
+</body>
+</html>
