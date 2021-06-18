@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>form1 예제</h3>
+    <select id="select">
+        <option value="java">자바</option>
+        <option value="nodejs">노드</option>
+        <option value="react">리액트</option>
+    </select>
+    <hr />
+    <select id="select1" style="height:300px" multiple>
+        <option value="java">자바</option>
+        <option value="nodejs">노드</option>
+        <option value="react">리액트</option>
+    </select><br />
+    <input type="text" id="value" placeholder="value 내용" />
+    <input type="text" id="txt" placeholder="표시되는 내용" />
+    <input type="button" id="btn1" value="select에 추가" /><br />
+    <input type="button" id="btn2" value="select에 삭제" /><br />
+    
+    <input type="button" id="btn3" value="select에서 복사" />
+    <div id="out">여기에 표시</div>
+
+    <hr />
+
+    <script>
+        // const a =12; // 상수 a의 내용을 변경할 수 없다
+        // var a =12; // 상수 a의 내용을 변경할 수 없다
+
+        const select1 =  document.getElementById("select1");
+        const value1 =  document.getElementById("value");
+        const txt =  document.getElementById("txt");
+        const btn1 =  document.getElementById("btn1");
+        const btn2 =  document.getElementById("btn2");
+        const btn3 =  document.getElementById("btn3");
+        const out =  document.getElementById("out");
+
+        btn3.addEventListener('click', () => {
+            //모든항목 == 선택항목+선택하지않음항목
+            console.log(select1.options);
+            const tmp = select1.options;
+            //type값, 내용...
+            for(var i=0; i<tmp.length; i++){ //전체항목 1개씩 탐색
+                if( tmp[i].selected == true ){
+                    // 1. <div>여기에 내용</div>   out.innerText = 값
+                    // 2. <input type=            out.value = 값
+                    out.innerText += tmp[i].innerText;
+                }
+            }
+        });
+
+
+        btn2.addEventListener('click', () => {
+            //array로 리턴되고 선택항목 판단
+            console.log(select1.options); //전체가져오기
+            console.log(select1.options); //3
+
+            for(var i=select1.options.length-1; i>=0; i--){ //2 1 0
+                if(select1.options[i].selected == true){
+                    select1.options[i].remove();
+                }
+            }
+        });
+
+        btn1.addEventListener('click', () => {
+            var opt = document.createElement("option");
+            //opt.setAttribute("value", 'sql');
+            opt.value = value1.value;
+            opt.textContent = txt.value;
+            select1.appendChild(opt);
+        });
+
+    </script>
+</body>
+</html>

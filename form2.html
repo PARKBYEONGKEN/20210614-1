@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="button" value="추가" id="btn"/>
+    <input type="button" value="삭제" id="remove"/>
+
+    <div id="add">
+        추가시 이영역에 input type="text"를 추가하고
+        삭제시 마지막 부터 삭제하기
+    </div>
+
+
+    <script>
+        var btn = document.getElementById('btn');
+        var remove = document.getElementById('remove');
+        var add = document.getElementById('add');
+
+        btn.addEventListener('click',()=>{
+            // add.innerHTML += '<input type="text">'
+            var opt = document.createElement('input');
+            opt.type = "text";
+            opt.value = "aaa";
+            add.appendChild(opt);
+        });
+        remove.addEventListener('click',()=>{
+           if(add.childElementCount > 0){
+               add.lastChild.remove();
+            }
+        });
+    </script>
+</body>
+</html>
