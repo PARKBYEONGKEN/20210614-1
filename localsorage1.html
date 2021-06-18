@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <textarea id="txt" rows="6">내용들...</textarea>
+    <hr />
+    텍스트 색상 변경:<input type="color" id="txtcolor" />
+    배경 색상 변경:<input type="color" id="bgcolor" />
+    <br>
+    <br>
+    <input type="button" value="색상저장" id="save" />
+    <input type="button" value="초기화"  id="remove" />
+    <input type="button" value="색상읽기" id="chk" />
+
+    <script>
+        const txt =  document.getElementById("txt");
+        const txtcolor =  document.getElementById("txtcolor");
+        const bgcolor =  document.getElementById("bgcolor");
+        const save =  document.getElementById("save");
+        const remove =  document.getElementById("remove");
+        const chk =  document.getElementById("chk");
+
+        chk.onclick = function() {
+            var obj = JSON.parse(localStorage.getItem("COLOR"));
+            txt.style.color = obj.color1;
+            txt.style.backgroundColor = obj.color2;
+        }
+
+        remove.onclick = function(){
+            localStorage.removeItem("COLOR");
+        }
+
+        save.onclick = function() {
+            // {key:'value', key1:34534, key2:'efefe'}
+            const obj = { 
+                color1 : txtcolor.value, 
+                color2 : bgcolor.value 
+            };
+
+            console.log(obj);
+            console.log(typeof(obj));  // object
+
+            // JSON.stringify( obj )   => object to string변경
+            // JSON.parse( str )       => string to object변경 
+            console.log( JSON.stringify( obj ) );
+            console.log( typeof(JSON.stringify(obj)) );  //string
+
+            // obj => {color1:'#cccccc', color2:'#dddddd'}
+            localStorage.setItem("COLOR", JSON.stringify( obj ));
+        };
+
+        txtcolor.onchange = function() {
+            txt.style.color = txtcolor.value;
+        };
+
+        bgcolor.onchange = function() {
+            txt.style.backgroundColor = bgcolor.value;
+        };
+
+    </script>
+
+</body>
+</html>
